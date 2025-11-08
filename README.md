@@ -24,6 +24,9 @@ The hardest thing to find was a good movies dataset that also included MPAA rati
 
 Both included title, year, MPAA rating, genre, production budget and worldwide gross. 
 
+![counts](images/datasample.png)
+
+
 ### Inspecting the Data
 
 The first dataset contained a set of 5744 movies, with little missing data, however I wanted to make sure that it represented trends over the past 40 years, so I wanted to check and be sure the range of years it covered.
@@ -31,6 +34,7 @@ The first dataset contained a set of 5744 movies, with little missing data, howe
 To supplement my data, I found another dataset of similar size and quality, but that appeared to have more movies from the 80s and 90s to round out my dataset.
 
 My 2nd dataset looked great, but had over 1200 values equal to zero in the budget column. My datasets overlapped a little bit, so I was hoping that in merging the two, I could fill in some of the missing data.
+
 
 ### Merging the dataframes
 I performed a full outer merge of `df` and `df2` based on 'title' and 'year'. This included all rows from both dataframes, creating a combined dataframe.
@@ -45,19 +49,70 @@ To clean my merged dataframe, I:
 - dropped data that I didn't need.
 - created several new columns to make it easier to analyze my data.
 
-#### Descriptive Statistics By MPAA Rating
+### Descriptive Statistics By MPAA Rating
 With a solid dataset in place, I wanted to explore the different relationships between cost, revenue, profit, and ROI -- and see how they differ by MPAA rating.
+
+![counts](images/describe.png)
+
 
 #### Counts
 First I wanted to get an idea of how many of each type of movie (by MPAA rating) there was to answer the question "Which ratings are produced most often?".
 
-I believe this dataset is a good representation of most of the movies made in the past several decades. So although it may not include every movie made, it should include the vast majority of English speaking titles.
+Looking at this data, we can see that far more R movies have been made than other types. **R movies represent over 20 times the number of G movies, and almost 3 times the number of PG movies.**
+
+![counts](images/counts.png)
 
 
+#### Mean Values
+Next I looked at things by the averages. The table below provides a summary of key statistics for each MPAA rating group.
+
+![mean](images/mean.png)
+
+#### Median Values
+I noticed there are quite a few outliers in my dataset. To get a better measure of central tendency, next I looked at things by the **median values**. The table below provides a summary of key statistics for each MPAA rating group.
+
+![median](images/median.png)
+
+### Key Insights
+I discovered a number of key insights:
+
+#### **Median Cost (Budget) By MPAA Rating**
+Which type of movie is the cheapest or most expensive to make? Looking through the median lens, **R movies cost about half as much to make as PG, G, and PG-13 movies.** PG-13 movies budgets are slightly more than G or PG movies.
+
+![median budget](images/medianbudget.png)
 
 
+#### **Median Earnings (Gross) By MPAA Rating**
+Which type of movie generates the most income? Median rated G movies bring in by far the most money, followed by PG-13, and PG. R movies make the least money by a significant margin. **Median G movies make nearly 3.8 times more than R movies.**
+
+![median budget](images/medianbudget.png)
 
 
+#### **Median Profit By MPAA Rating**
+Which type of movie is most profitable to produce? Rated G movies are by far the most profitable. **G movies are over 8 times more profitable than R movies, and over 1.5 times more profitable than PG or PG-13 movies.**
+
+#### **Median ROI by MPAA Rating**
+When looking at the mean ROI, 'G' and 'R' ratings appear to have higher averages. However, the **median** ROI tells a different story, with 'G', 'PG', and 'PG-13' having higher median ROIs than 'R'. This difference between mean and median ROI, especially for 'R' rated movies, suggests that while the average ROI for R-rated films is boosted by a few highly profitable outliers (low budget, high gross), the typical R-rated film has a lower ROI compared to the typical G, PG, or PG-13 film.
+
+More interestingly, it appears that **the more family friendly the movie is, the higher the ROI.**
+
+#### Outliers
+When dealing with movies, there are huge ranges in budgets and gross earnings, and there are alot of outliers.
+
+I used a boxplot to look at the distribution of budgets by rating, and then individual scatterplots to look at outliers in each area to gauge if it is likely that my conclusions would substantially flip by omitting outliers.
+
+I decided not to bother removing outliers, because it is interesting to look at the individual cases, and although they do skew the averages, the don't impact the medians.
+
+## Correlations ##
+
+The correlation between **budget and gross** is the strongest among the relationships between the financial metrics. The correlations between year/decade and budget/gross are also notable and point to trends over time. 
+
+![heatmap](images/heatmap.png)
+
+#### Scatter plot of Budget vs Gross
+To better see this correlation, I made a scatterplot that visualizes the relationship between the budget of a movie and its gross revenue, showing the strong correlation between the budget of a movie and how much it makes. 
+
+![scatter](images/scatter.png)
 
 
 
