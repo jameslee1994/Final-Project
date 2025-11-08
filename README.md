@@ -91,10 +91,16 @@ Which type of movie generates the most income? Median rated G movies bring in by
 #### **Median Profit By MPAA Rating**
 Which type of movie is most profitable to produce? Rated G movies are by far the most profitable. **G movies are over 8 times more profitable than R movies, and over 1.5 times more profitable than PG or PG-13 movies.**
 
+![median profit](images/medianprofit.png)
+
+
 #### **Median ROI by MPAA Rating**
 When looking at the mean ROI, 'G' and 'R' ratings appear to have higher averages. However, the **median** ROI tells a different story, with 'G', 'PG', and 'PG-13' having higher median ROIs than 'R'. This difference between mean and median ROI, especially for 'R' rated movies, suggests that while the average ROI for R-rated films is boosted by a few highly profitable outliers (low budget, high gross), the typical R-rated film has a lower ROI compared to the typical G, PG, or PG-13 film.
 
 More interestingly, it appears that **the more family friendly the movie is, the higher the ROI.**
+
+![median roi](images/medianroi.png)
+
 
 #### Outliers
 When dealing with movies, there are huge ranges in budgets and gross earnings, and there are alot of outliers.
