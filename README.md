@@ -138,6 +138,30 @@ I created a line plot to visualize the number of movies per decade of each MPAA 
 - **Growth of PG-13:** PG-13 was created in the 1980s to fill the gap between PG and R, and it has grown steadily to surpass PG releases. 
 - **Decline of G movies**: The number of PG and G releases shows more fluctuation across the decades compared to R and PG-13. Interestingly, G-rated movies consistently have the lowest number of releases and have decreased slightly in recent decades, in spite of their success.
 
+![release trend](images/releasestrend.png)
+
+#### Budget by Rating per Decade
+Looking at the difference in production costs over time we see some interesting trends:
+
+Flattened median Budget for G Movies from the 1990s on: 
+- There is a flattening, even a decline, of budget in G movies from the 1990s forward, which doesn't seem to align with the average budget, count, or profit charts. Why is this?
+- The flattening median could suggest that the majority of G-rated films produced since the 1990s, while still profitable on average, might not have had the same consistently increasing budgets as the most expensive G-rated films. This could include a steady stream of lower-to-mid budget G-rated films (e.g., certain documentaries, independent family films, or direct-to-video releases not fully captured in the data).
+- In some cases, advancements in technology might allow for high-quality G-rated films to be produced at relatively lower costs compared to earlier decades, potentially contributing to a stable or slightly declining median budget even as production values remain high.
+
+NOTE: There is only a single G movie in our dataset for the 2020s, so the sample size is too small to infer anything from.
+![budget trend](images/budgettrend.png)
+
+#### Gross Revenue by Rating (by Decade)
+
+Looking at how typical gross revenue for movies of different ratings has changed over time, there are some interesting insights:
+
+- **Movies are Big Business:** Generally, the median gross revenue for all MPAA ratings appears to have an upward trend across the decades, indicating that movies, in general, are earning more over time (though this is not adjusted for inflation). G, PG, and PG-13 rated movies tend to have higher typical earnings per film compared to R-rated movies, and this trend appears to persist across most decades in the dataset.
+- **Dip in G Movies Revenue in the 2010s:** The dip in G movie revenue in the 2010s is also notable. This could be due to fewer G-rated releases. With fewer G movies being made, the sample size for calculating the median revenue is smaller and could be more influenced by the performance of a few films.
+- **Shift to PG?:** Some films that might have been rated G in earlier decades could now be receiving a PG rating due to changing content standards or a desire to reach a slightly older family audience. The increasing median revenue for PG movies in later decades could be driven by the success of major animated films and family-friendly blockbusters. Many highly profitable franchises and standalone movies aimed at a broader audience fall under the PG rating. As production values and marketing for these films have increased over time, so has their earning potential.
+- **Rise of the Sequel?**: It's possible that the G-rated films released in the 2010s, as a group, did not perform as well financially as those in surrounding decades, even without being low-budget films.
+- **R-rated Movies increase in Popularity:** Consistently across all decades, R-rated movies have the lowest median gross revenue compared to the other ratings, but their median gross has increased over time.
+
+![revenue trend](images/revenuetrend.png)
 
 
 ## Summary of Findings
@@ -160,6 +184,7 @@ Based on this analysis, here is a summary of the findings, and the answers I fou
 
 *   Similar to gross revenue, **average profit is highest for G-rated movies**, followed by PG-13 and PG, and lowest for R-rated movies. Median profit shows a more extreme difference, with **G, PG, and PG-13 movies having considerably higher median profits than R-rated movies**. This distinction highlights the impact of high-profit outliers (likely blockbusters) in the G, PG, and PG-13 categories that skew the average upwards. The median suggests that a typical G, PG, or PG-13 movie is more profitable than a typical R-rated movie.
 
+
 **Do “family-friendly” films (G/PG, or even PG-13) outperform R-rated films?**
 
 *   Based on the analysis of median gross revenue, median profit, and median ROI, **"family-friendly" films (G, PG, and PG-13) generally outperform R-rated films** in terms of typical earnings, profitability, and return on investment. While R-rated films are produced more often and have lower production costs, the data suggests that the typical G, PG, and PG-13 film generates higher revenue and profit, and provides a better return on the investment. The presence of high-ROI outliers in the R category (often low-budget horror films that are very profitable relative to their cost) can inflate the average ROI, but the median ROI provides a clearer picture of the typical return, where family-friendly films tend to fare better.
@@ -169,3 +194,6 @@ Based on this analysis, here is a summary of the findings, and the answers I fou
 *   **Movie Production:** The number of R and PG-13 rated movies has increased significantly over the decades, dominating releases from the 1980s onwards. The number of G and PG releases has been lower and more variable.
 *   **Budgets:** Average and median movie budgets have generally increased over time across all ratings, likely due to inflation and increasing production scale. R-rated movies have consistently maintained the lowest average and median budgets per decade.
 *   **Revenue and Profit:** Average and median gross revenue and profit have also generally increased over time for all ratings. G, PG, and PG-13 movies have consistently shown higher typical (median) revenue and profit compared to R-rated movies throughout the decades. The average revenue and profit, particularly for G, PG, and PG-13, are heavily influenced by high-grossing and high-profit outlier films in certain decades.
+
+![revenue trend](images/profittrend.png)
+
